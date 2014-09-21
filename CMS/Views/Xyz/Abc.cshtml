@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CMS.Models.Subject>
+
+
+@{
+    ViewBag.Title = "SubjectPages";
+}
+
+<h2>Hello Student World</h2>
+
+@*<h3>Subject Name: @Model.subj.Su</h3>*@
+@foreach (var item in Model)
+{
+    <div>---------------------------------------------------------<br></div>
+    <h4>Subject Name: @item.SubjectName</h4>
+    <h4>Subject Position: @item.SubjectPosition</h4>
+
+}
