@@ -7,11 +7,11 @@ using System.Web;
 namespace CMS.ViewModels
 {
     //View Models
-    public class SubjectPage
+    public class SubjectRelatedData
     {
-        public Subject subj {get ; set;}
+        public Subject subj { get; set; }
         public List<Page> pg { get; set; }
-
+        public List<Content> content { get; set; } 
        
     }
 }

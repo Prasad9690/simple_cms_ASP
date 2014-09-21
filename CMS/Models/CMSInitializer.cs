@@ -23,10 +23,10 @@ namespace CMS.Models
 
             var pages = new List<Page>
             {
-                new Page{PageName="Life",PagePosition=1,PageVisible=true},
-                new Page{PageName="Facilities",PagePosition=2,PageVisible=true},
-                new Page{PageName="Opening time",PagePosition=1,PageVisible=true},
-                new Page{PageName="Weekly Special",PagePosition=2,PageVisible=true}
+                new Page{PageName="Life",PagePosition=1,PageVisible=true,PageContent="Content for Life"},
+                new Page{PageName="Facilities",PagePosition=2,PageVisible=true,PageContent="Content for Facilities"},
+                new Page{PageName="Opening time",PagePosition=1,PageVisible=true,PageContent="Content for Opening Time"},
+                new Page{PageName="Weekly Special",PagePosition=2,PageVisible=true,PageContent="Content for Weekly specialities"}
             };
             foreach (var temp in pages)
             {
@@ -36,10 +36,10 @@ namespace CMS.Models
 
             var contents = new List<Content>
             {
-                new Content{SubjectId=1,PageId=1,PageContent="Content for Life"},
-                new Content{SubjectId=1,PageId=2,PageContent="Content for Facilities"},
-                new Content{SubjectId=2,PageId=3,PageContent="Content for Opening Time"},
-                new Content{SubjectId=2,PageId=4,PageContent="Content for Weekly special"}
+                new Content{SubjectId=1,PageId=1},
+                new Content{SubjectId=1,PageId=2},
+                new Content{SubjectId=2,PageId=3},
+                new Content{SubjectId=2,PageId=4}
             };
             foreach (var temp in contents)
             {

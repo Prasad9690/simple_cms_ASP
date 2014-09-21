@@ -1,0 +1,52 @@
+﻿@model CMS.ViewModels.SubjectRelatedData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Subject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.SubjectName)*@
+            Subject Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.subj.SubjectName)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.SubjectPosition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectPosition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectVisible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectVisible)
+        </dd>*@
+
+       @foreach(var temp in Model.pg)
+       {
+           <h3>@temp.PageName</h3>
+           <h3>@temp.PageContent</h3>
+
+       }
+
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.subj.SubjectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
