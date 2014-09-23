@@ -161,6 +161,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\XyzController.cs" />
     <Compile Include="Global.asax.cs">
@@ -174,6 +176,8 @@
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ViewModels\SelectedPage.cs" />
+    <Compile Include="ViewModels\PublicData.cs" />
     <Compile Include="ViewModels\SubjectRelatedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -185,6 +189,8 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\logo.jpg" />
+    <Content Include="Content\public.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -248,6 +254,14 @@
     <Content Include="Views\Subject\Details.cshtml" />
     <Content Include="Views\Subject\Edit.cshtml" />
     <Content Include="Views\Subject\Index.cshtml" />
+    <Content Include="Views\Page\Create.cshtml" />
+    <Content Include="Views\Page\Delete.cshtml" />
+    <Content Include="Views\Page\Details.cshtml" />
+    <Content Include="Views\Page\Edit.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPublic.cshtml" />
+    <Content Include="Views\Public\Index.cshtml" />
+    <Content Include="Views\Public\SubjectPage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

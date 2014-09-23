@@ -1,0 +1,44 @@
+﻿@model CMS.ViewModels.PublicData
+@{
+    ViewBag.Title = "SRH Campus News";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<div class="sidebar_container">
+    <div class="sidebar">
+        <div class="sidebar_item">
+            @foreach (var subject in Model.subj)
+            {
+                <h3>@subject.SubjectName</h3>
+                foreach (var content in Model.content)
+                {
+                    if (subject.SubjectId == content.SubjectId)
+                    {
+                        foreach (var page in Model.pg)
+                        {
+                            if (content.PageId == page.PageId)
+                            {
+                                <p><a href="/Public/SubjectPage?id=@page.PageId">@page.PageName</a></p>
+                            }
+                        }
+                    }
+                }
+            }
+        </div><!--close sidebar_item-->
+    </div><!--close sidebar-->
+</div><!--close sidebar_container-->
+
+<div id="content">
+    <div class="content_item">
+        @*<?php if($sel_page) { ?>
+        <h2><?php echo htmlentities($sel_page['menu_name']); ?></h2>
+        <p><?php echo strip_tags(nl2br($sel_page['content']),"<b><br><p><a>"); ?></p>
+        <?php } else { ?>
+        <h2>Welcome</h2>
+        <?php } ?>*@
+        
+       
+
+    </div><!--close content_item-->
+</div><!--close content-->
+

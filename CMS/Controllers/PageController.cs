@@ -7,144 +7,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Models;
-using CMS.ViewModels;
 
 namespace CMS.Controllers
 {
-    public class SubjectController : Controller
+    public class PageController : Controller
     {
         private CMSContext db = new CMSContext();
 
-        // GET: Subject
+        // GET: Page
         public ActionResult Index()
         {
-            return View(db.Subjects.ToList());
+            return View(db.Pages.ToList());
         }
 
-        // GET: Subject/Details/5
+        // GET: Page/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = db.Subjects.Find(id);
-            if (subject == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-
-            SubjectRelatedData data = new SubjectRelatedData();
-            List<Content> contents = db.Contents.ToList();
-            List<Content> cont = new List<Content>();
-            List<Page> page = new List<Page>();
-            foreach (var con in contents)
-            {
-                if (subject.SubjectId == con.SubjectId)
-                {
-                    page.Add(db.Pages.Find(con.PageId));
-                    data.subj = subject;
-                    //cont.Add(con.PageContent);
-                }
-            }
-            data.pg = page;
-
-            return View(data);
+            return View(page);
         }
 
-        // GET: Subject/Create
+        // GET: Page/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Subject/Create
+        // POST: Page/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SubjectId,SubjectName,SubjectPosition,SubjectVisible")] Subject subject)
+        public ActionResult Create([Bind(Include = "PageId,PageName,PagePosition,PageVisible,PageContent")] Page page)
         {
             if (ModelState.IsValid)
             {
-                db.Subjects.Add(subject);
+                db.Pages.Add(page);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(subject);
+            return View(page);
         }
 
-        // GET: Subject/Edit/5
+        // GET: Page/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = db.Subjects.Find(id);
-            if (subject == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-
-            SubjectRelatedData data = new SubjectRelatedData();
-            List<Content> contents = db.Contents.ToList();
-            List<Content> cont = new List<Content>();
-            List<Page> page = new List<Page>();
-            foreach (var con in contents)
-            {
-                if (subject.SubjectId == con.SubjectId)
-                {
-                    page.Add(db.Pages.Find(con.PageId));
-                    data.subj = subject;
-                    //cont.Add(con.PageContent);
-                }
-            }
-            data.pg = page;
-
-            return View(data);
-            
+            return View(page);
         }
 
-        // POST: Subject/Edit/5
+        // POST: Page/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SubjectId,SubjectName,SubjectPosition,SubjectVisible")] Subject subject)
+        public ActionResult Edit([Bind(Include = "PageId,PageName,PagePosition,PageVisible,PageContent")] Page page)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(subject).State = EntityState.Modified;
+                db.Entry(page).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(subject);
+            return View(page);
         }
 
-        // GET: Subject/Delete/5
+        // GET: Page/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = db.Subjects.Find(id);
-            if (subject == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            return View(page);
         }
 
-        // POST: Subject/Delete/5
+        // POST: Page/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Subject subject = db.Subjects.Find(id);
-            db.Subjects.Remove(subject);
+            Page page = db.Pages.Find(id);
+            db.Pages.Remove(page);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model CMS.Models.Subject
+﻿@model CMS.ViewModels.SubjectRelatedData
 
 @{
     ViewBag.Title = "Edit";
@@ -14,33 +14,49 @@
         <h4>Subject</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.SubjectId)
+        @Html.HiddenFor(model => model.subj.SubjectId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.subj.SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SubjectName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubjectName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.subj.SubjectName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subj.SubjectName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SubjectPosition, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.subj.SubjectPosition, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SubjectPosition, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubjectPosition, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.subj.SubjectPosition, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subj.SubjectPosition, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SubjectVisible, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.subj.SubjectVisible, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.SubjectVisible)
-                    @Html.ValidationMessageFor(model => model.SubjectVisible, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.subj.SubjectVisible)
+                    @Html.ValidationMessageFor(model => model.subj.SubjectVisible, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
+        
+        <h5>Pages</h5>
+        <div class="form-group">
+            @foreach (var temp in Model.pg)
+            {
+                <div class="form-group">
+                    @temp.PageName
+                    <a href="/Page/Edit?id=@temp.PageId">Edit</a> |
+                    <a href="/Page/Details?id=@temp.PageId">Details</a> |
+                    <a href="/Page/Delete?id=@temp.PageId">Delete</a>
+                </div>
+
+            }
+        </div>
+
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
