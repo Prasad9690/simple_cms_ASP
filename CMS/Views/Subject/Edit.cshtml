@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.subj.SubjectId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.subj.SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class = "control-label col-md-2">Subject Name</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.subj.SubjectName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.subj.SubjectName, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.subj.SubjectPosition, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Subject Position</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.subj.SubjectPosition, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.subj.SubjectPosition, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.subj.SubjectVisible, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Subject Visibility</label>
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.subj.SubjectVisible)
@@ -41,29 +41,40 @@
                 </div>
             </div>
         </div>
-        
-        <h5>Pages</h5>
-        <div class="form-group">
-            @foreach (var temp in Model.pg)
-            {
-                <div class="form-group">
-                    @temp.PageName
-                    <a href="/Page/Edit?id=@temp.PageId">Edit</a> |
-                    <a href="/Page/Details?id=@temp.PageId">Details</a> |
-                    <a href="/Page/Delete?id=@temp.PageId">Delete</a>
-                </div>
-
-            }
-        </div>
-
-
-
+       
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
-    </div>
+
+        <hr /> 
+        <h5>Pages</h5>
+        <hr />
+            @foreach (var temp in Model.pg)
+            {
+                <table class="form-group">
+
+                    <tr>
+                        <content class="control-label col-md-2"><b>@temp.PageName</b></content>
+                        <a href="/Page/Edit?id=@temp.PageId">Edit</a> |
+                        <a href="/Page/Details?id=@temp.PageId">Details</a> |
+                        <a href="/Page/Delete?id=@temp.PageId">Delete</a>
+
+
+                    </tr>
+                </table>
+
+
+
+
+
+            }
+       
+
+
+
+           </div>
 }
 
 <div>

@@ -106,7 +106,6 @@ C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_c
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms_ASP\CMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms_ASP\CMS\obj\Debug\CMS.dll
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms_ASP\CMS\obj\Debug\CMS.pdb
-C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms_ASP\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\bin\CMS.dll.config
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\bin\CMS.dll
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\bin\CMS.pdb
@@ -162,3 +161,4 @@ C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\obj\Debug\CMS.dll
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\obj\Debug\CMS.pdb
 C:\Users\D062751\Documents\Visual Studio 2013\Projects\simple_CMS\simple_cms_ASP\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
+C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms_ASP\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
