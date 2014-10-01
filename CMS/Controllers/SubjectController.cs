@@ -23,6 +23,7 @@ namespace CMS.Controllers
         }
 
         // GET: Subject/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
