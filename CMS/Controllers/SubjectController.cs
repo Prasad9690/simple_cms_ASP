@@ -16,6 +16,7 @@ namespace CMS.Controllers
         private CMSContext db = new CMSContext();
 
         // GET: Subject
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Subjects.ToList());
